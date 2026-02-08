@@ -1,0 +1,28 @@
+{
+  "name": "cosmosdb-test",
+  "version": "1.0.0",
+  "description": "CosmosDB Emulator test project with TypeScript",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "cosmosdb",
+    "azure",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@azure/cosmos": "^4.0.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.16",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
