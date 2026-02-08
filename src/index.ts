@@ -19,6 +19,17 @@ async function main() {
     // 1. CosmosDBの初期化
     await initializeCosmosDB();
 
+    // 最初にすべてのアイテムを削除
+    console.log('--- すべてのアイテムを削除 ---');
+    const allItems_delltarget= await getAllItems();
+    console.log('すべてのアイテム:');
+    for (const item of allItems_delltarget) {
+      console.log(`  - ${item.id}: ${item.name} (¥${item.price})`);
+      await deleteItem(item.id);
+      await new Promise((resolve) => setTimeout(resolve, 1000)); // 削除の反映を待つ
+    }
+    console.log('');
+
     // 2. CREATE: アイテムの作成
     console.log('--- CREATE: アイテムの作成 ---');
     const item1: Item = {
