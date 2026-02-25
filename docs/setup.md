@@ -105,6 +105,18 @@ lsof -i :8081
 docker compose logs cosmosdb
 ```
 
+### 評価期間エラー
+```bash
+# Emulatorを停止
+docker compose down
+
+# 古いイメージを削除
+docker rmi mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator:latest
+
+# 最新イメージの取得
+docker compose up -d
+```
+
 ### 証明書エラー
 
 `.env`ファイルに`NODE_TLS_REJECT_UNAUTHORIZED=0`が設定されているか確認してください。
